@@ -51,8 +51,8 @@ app.intent('AMAZON.CancelIntent', exitfunction);
 
 app.intent('AMAZON.HelpIntent', function(req, res){
     var speechOut = 'To get a fact about any number, say the number, ' + 
-    'For example, to get facts about the number 10, say ten';
-    res.say(speechOut);
+    'For example, to get facts about the number 10, say ten. What number do you want facts about?';
+    res.say(speechOut).shouldEndSession(false);
 });
 
 console.log(app.utterances().replace(/\{\-\|/g, '{'));
